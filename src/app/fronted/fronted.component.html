@@ -1,0 +1,50 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-8">
+      <span class="heading">Pick your favourite juices...</span>
+    
+      <div class="card" *ngFor='let x of Data;let i=index;'>
+        <div class="row" >
+          <div class="col-12 col-md-4 text-center">
+            <img src="/assets/images/{{x.id}}.jpg">
+          </div>
+          <div class="col-12 col-md-8">
+        <div class="card-body">
+          <span class="card-title">{{x.title | uppercase}}</span>
+          <small class="right">{{x.price | currency}}</small>
+          
+          <p class="card-text">{{x.content}}</p>
+          <div class="card-text heading1">ingredients</div>
+          <div class="card-text" *ngFor="let ingredients of x.ingredients;let first=first;let last=last">{{ingredients}}{{last?'':''}}</div>
+          
+          <button  class="btn btn-primary" (click)="addToCart(x.price,x.title,i)">Add To Cart</button>
+          <span [hidden]=" x.quantity==0"  class="padding1">
+              <button class="btn btn-primary btn1 "    (click)="removeItem(x.price,i,x.title)">Remove item from list</button>
+              </span>
+              
+              <!-- x.quantity==0 ||item==0 -->
+        </div>
+        
+        </div>
+
+        </div>
+
+      </div>
+     
+
+    </div>
+    <div class="col-12 col-md-4">
+      <h5><i class="fas fa-shopping-cart"></i>Your Shopping </h5>
+      <span>Sub Total({{item}} items):</span>
+      <span>{{price|currency}}</span>
+     
+      <button  class="btn btn-primary button1 " [disabled]="item===0" [routerLink]='["/order"]'>Proceed To CheckOut</button>
+      <hr>
+      <button class="btn btn-primary button2" [disabled]="item===0" (click)="emptyBasket()">Empty shopping basket</button>
+   
+    </div>
+  </div>
+
+</div>

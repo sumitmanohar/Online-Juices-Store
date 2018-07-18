@@ -1,0 +1,46 @@
+img{
+    height: 250px;
+}
+.right{
+    float: right;
+}
+h1{
+    font-size: 30px;
+    margin-top: 10px;
+}
+.heading{
+    font-size: 20px;
+}
+.btn{
+    margin-top: 8px;
+    padding: 10px 30px 10px 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.card-title{
+    font-size: 25px;
+}
+.card-text{
+    font-size: 16px;
+}
+small{
+    font-size: 20px;
+}
+.final{
+    font-size: 20px;
+}
+.form-check{
+    font-size: 20px;
+    font-weight: bold;
+}
+.final1{
+    font-size: 20px;
+}
+hr{
+    display: none;
+}
+@media screen and (max-width:768px){
+    hr{
+        display: block;
+    }
+}

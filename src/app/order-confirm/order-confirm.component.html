@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6">
+   <h1><i class="fas fa-shopping-cart"></i>Checkout</h1>
+    </div>
+    <div class="col-12 col-md-4">
+      <h1>OrderTotal:{{totalPrice|currency}}</h1>
+    </div>
+    <div class="col-12 col-md-2">
+     
+      <button [routerLink]="['/logout']" class="btn btn-primary">Purchase Order</button>
+    </div>
+  </div>
+  <hr>
+</div>
+
+<div class="container ">
+  <div class="row">
+     
+    <div class="col-12 col-md-8">
+        <p class="heading">Delivery 1 of 1</p>
+        <p class="heading">Dispatching to the IN....</p>
+      <div class="row " *ngFor="let x of currentData">
+        <div class="col-12 col-md-2 text-center">
+           <img src="/assets/images/{{x.id}}.jpg">
+            </div>
+        <div class="col-12 col-md-6">
+            <span class="card-title">{{x.title | uppercase}}</span>
+            
+            
+            <p class="card-text">{{x.content}}</p>
+        </div>
+        <div class="col-12 col-md-2">
+          <small>{{x.quantity}}X{{x.price|currency}}</small>
+        </div>
+        <div class="col-12 col-md-2 final">
+            {{x.totalPrice|currency}}
+        </div>
+      </div>
+<hr>
+    </div>
+
+
+    <div class="col-12 col-md-4" >
+        <h5>Delivery Options</h5>
+      <div class="row" *ngFor="let x of Delivery">
+        <div class="col-12 col-md-10" >
+            <div class="form-check" >
+                <input  class="form-check-input" (click)="shifInCharge(x.price)" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                
+                 {{x.type}}
+                
+               
+              </div>
+              <p>{{x.content}}</p>
+        </div>
+        <div class="col-12 col-md-2 final1">
+            <span>{{x.price|currency}}</span>
+        </div>
+      </div>
+      
+     
+        
+    </div>
+  </div>
+</div>
