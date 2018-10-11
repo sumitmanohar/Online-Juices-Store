@@ -41,8 +41,14 @@ export class HttpService {
   //   this.product[i].quantity=quan
   //   console.log(this.product[i].quantity)
   //   }
+  titleZero():any{
+    this.Title=[]
+  }
   getData():any{
     return this.product
+  }
+  setData(data):any{
+    this.product=data
   }
   getDataDelivery():any{
     return this.delivery

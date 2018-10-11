@@ -38,7 +38,7 @@ export class FrontedComponent implements OnInit {
   this.item++
 
   console.log(this.item)
-  this.Data[i].quantity=this.item
+  // this.Data[i].quantity=this.item
   this.ind=this.Data[i].quantity
   
   console.log(price)
@@ -81,7 +81,7 @@ export class FrontedComponent implements OnInit {
   
   removeItem(price,i,title):any{
     this.item--
-    this.Data[i].quantity=this.item
+    // this.Data[i].quantity=this.item
     console.log(this.Data[i].quantity)
     console.log(i)
     this.ind=this.Data[i].quantity
